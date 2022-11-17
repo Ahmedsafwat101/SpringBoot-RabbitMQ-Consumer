@@ -5,8 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
 
-import static com.example.rabbitmq.rabbitmqconsumer.configurations.RabbitConfig.QUEUE_A;
-import static com.example.rabbitmq.rabbitmqconsumer.configurations.RabbitConfig.QUEUE_B;
+import static com.example.rabbitmq.rabbitmqconsumer.configurations.RabbitConfig.*;
 
 @Component
 @Slf4j
@@ -20,5 +19,10 @@ public class Consumer {
     @RabbitListener(queues = QUEUE_B)
     public void receiveFromQueueB(CustomMessage message){
         log.info("Message Received from Queue B {}",message);
+    }
+
+    @RabbitListener(queues = QUEUE_ALL)
+    public void receiveFromAllQueues(CustomMessage message){
+        log.info("Message Received from All Queues {}",message);
     }
 }
