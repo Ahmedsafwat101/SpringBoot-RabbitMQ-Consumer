@@ -16,3 +16,6 @@ A sample demo app for integrating spring boot with RabbitMQ and how to implement
 - Run the producer on port 8080 "default"
 - Run the consumer on port 8081 
 - monitor queus from http://localhost:15672/#/queues 
+
+Link to producer
+https://github.com/Ahmedsafwat101/SpringBoot-RabbitMQ-Producer
